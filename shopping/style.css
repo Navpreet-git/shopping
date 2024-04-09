@@ -1,0 +1,150 @@
+/* Header styles */
+.header {
+    background-color: #344E41; /* Dark green background */
+    color: #FFFFFF; /* White text */
+    padding: 1.5rem; /* Increased padding for more spacing */
+    text-align: center;
+    margin-bottom: 20px; /* Add margin to create space between header and products */
+    position: relative; /* Needed for positioning the image */
+    transition: background-color 0.3s ease; /* Add smooth transition */
+}
+
+.header.fixed-header {
+    background-color: #3A5A40; /* Slightly lighter green background when fixed */
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5rem; /* Larger font size */
+    font-family: "Arial", sans-serif; /* Choose a font */
+    letter-spacing: 2px; /* Add letter spacing for better readability */
+}
+
+.logo {
+    position: absolute; /* Position the image absolutely within the header */
+    top: 50%; /* Position it vertically at the center */
+    right: 20px; /* Align it to the right side */
+    transform: translateY(-50%); /* Adjust vertical position */
+    width: 100px; /* Set width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Product styles */
+.product-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows products to wrap to the next line */
+    justify-content: center; /* Centers products horizontally */
+    margin-top: 100px; /* Add top margin to compensate for fixed header */
+}
+
+.product {
+    width: 40%;
+    margin: 10px; /* Add margin to create space between products */
+    display: flex;
+    flex-direction: column;
+    border: 10px solid #588157; /* Darker green border */
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #3A5A40; /* Slightly lighter green background */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.product-info {
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    margin-top: 1rem;
+}
+
+
+
+
+.product-image {
+    width: 250px; /* Set a fixed width */
+    height: 180px; /* Set a fixed height */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    border-radius: 5px;
+    margin-right: 1rem;
+    flex-shrink: 0; /* Prevent image from shrinking */
+
+}
+
+
+.product-features {
+    margin: 1rem 0;
+    list-style-type: none;
+    padding: 0;
+}
+
+.features {
+    margin-bottom: 0.25rem;
+}
+
+/* New color palette */
+body {
+    background-color: #A3B18A; /* White background */
+}
+
+.product h2 {
+    color: #FFFFFF; /* White heading text */
+}
+
+.product p {
+    color: #FFFFFF; /* White description text */
+}
+
+.product button {
+    background-color: #588157; /* Darker green add button */
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background-color: #344E41; /* Dark green on hover */
+}
+
+.product button:active {
+    background-color: #2A3F33; /* Slightly darker green when clicked */
+}
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px;
+}
+
+thead th {
+    background-color: #344E41; /* Dark green background for header */
+    color: #FFFFFF; /* White text color */
+    padding: 10px; /* Padding for header cells */
+    text-align: left; /* Align text to the left */
+    border: 1px solid #344E41; /* Border for header cells */
+}
+
+tbody td {
+    padding: 10px; /* Padding for table cells */
+    border: 1px solid #344E41; /* Border for table cells */
+}
+
+tbody td:last-child {
+    text-align: right; /* Align price and total product price to the right */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #F0F0F0; /* Alternate background color for even rows */
+}
+
+tfoot td {
+    padding: 10px; /* Padding for table footer cells */
+    border: 1px solid #344E41; /* Border for table footer cells */
+}
+
+/* Total price styles */
+#total-price {
+    font-weight: bold; /* Bold font weight for total price */
+    font-size: 1.2rem; /* Larger font size for total price */
+    margin-top: 20px; /* Add some top margin */
+}
