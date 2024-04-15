@@ -148,3 +148,22 @@ tfoot td {
     font-size: 1.2rem; /* Larger font size for total price */
     margin-top: 20px; /* Add some top margin */
 }
+
+button[data-action="completePurchase"] {
+    background-color: #588157; /* Darker green button background */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add some border radius for a rounded appearance */
+    padding: 10px 20px; /* Add padding for better spacing */
+    font-size: 1rem; /* Adjust font size */
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Add smooth transition for background color */
+}
+
+button[data-action="completePurchase"]:hover {
+    background-color: #344E41; /* Dark green on hover */
+}
+
+button[data-action="completePurchase"]:active {
+    background-color: #2A3F33; /* Slightly darker green when clicked */
+}

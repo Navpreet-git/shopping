@@ -55,32 +55,42 @@ $(document).ready(function() {
     // Define an array to store selected products
     var selectedProducts = [];
 
-// Function to add a product to the selected products array and store it in local storage
-function addProduct(name, price) {
-    selectedProducts.push({ name: name, price: price });
-    // Store selected products in local storage
-    localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
-}
-var storedProducts = localStorage.getItem('selectedProducts');
-if (storedProducts) {
-    selectedProducts = JSON.parse(storedProducts);
-}
+    // Function to add a product to the selected products array and store it in local storage
+    function addProduct(name, price) {
+        var existingProduct = selectedProducts.find(product => product.name === name);
+        if (existingProduct) {
+            existingProduct.quantity++;
+        } else {
+            selectedProducts.push({ name: name, price: price, quantity: 1 });
+        }
+        localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
+    }
+
+    // Retrieve selected products from local storage
+    var storedProducts = localStorage.getItem('selectedProducts');
+    if (storedProducts) {
+        selectedProducts = JSON.parse(storedProducts);
+    }
+
     // Function to navigate to the checkout page with selected products
-    function goToCheckout(selectedProducts) {
+    function goToCheckout() {
+        window.location.href = "checkout.html";
+    }
+    /*
+    for making information go from one page to another, but now i used my local storage simple to get information
         var queryString = "?";
         selectedProducts.forEach(function(product, index) {
             queryString += "product" + (index + 1) + "=" + encodeURIComponent(product.name) + "&";
             queryString += "price" + (index + 1) + "=" + encodeURIComponent(product.price) + "&";
         });
-        window.location.href = "checkout.html" + queryString;
-    }
+    */
 
     // Function to generate product HTML
     function generateProductHTML(product) {
         return `
             <div class="product">
                 <div class="product-info">
-                    <img class="product-image" src="images/${product.name.toLowerCase()}.jpeg" alt="something went wrong">
+                    <img class="product-image" src="images/${product.name.toLowerCase()}.jpeg" alt="Product Image">
                     <div class="product-details">
                         <h2>${product.name}</h2>
                         <p>${product.description}</p>
@@ -115,7 +125,6 @@ if (storedProducts) {
 
     // Add click event listener to the logo image to navigate to checkout with selected products
     $(".logo").click(function() {
-        // Navigate to checkout page with selected products
-        goToCheckout(selectedProducts);
+        goToCheckout();
     });
 });
